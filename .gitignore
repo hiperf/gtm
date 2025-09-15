@@ -1,0 +1,15 @@
+node_modules
+yarn.lock
+pnpm-lock.yaml
+
+.env
+.nuxt
+.output
+
+# Vitepress
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# Lib
+dist
+dist-helpers

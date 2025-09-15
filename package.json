@@ -1,0 +1,65 @@
+{
+	"name": "@hiperf/gtm",
+	"version": "0.0.1",
+	"description": "Simple, Ultra lightweight, GDPR friendly, Google Tag Manager (GTM) module for your Nuxt application.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hiperf/gtm.git"
+	},
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/types.d.mts",
+			"import": "./dist/module.mjs"
+		},
+		"./*": {
+			"import": "./dist-helpers/*.mjs"
+		}
+	},
+	"main": "./dist/module.mjs",
+	"typesVersions": {
+		"*": {
+			".": [
+				"./dist/types.d.mts"
+			]
+		}
+	},
+	"files": [
+		"dist",
+		"dist-helpers"
+	],
+	"dependencies": {
+		"@nuxt/kit": "^4.1.1"
+	},
+	"devDependencies": {
+		"@nuxt/devtools": "^2.6.3",
+		"@nuxt/module-builder": "^1.0.2",
+		"@nuxt/schema": "^4.1.1",
+		"@nuxt/test-utils": "^3.19.2",
+		"@types/node": "latest",
+		"changelogen": "^0.6.2",
+		"nuxt": "^4.1.1",
+		"playwright": "^1.55.0",
+		"rolldown": "^1.0.0-beta.37",
+		"typescript": "^5.9.2",
+		"vitepress": "^1.6.4",
+		"vitest": "^3.2.4",
+		"vue-tsc": "^3.0.7"
+	},
+	"packageManager": "pnpm@10.16.0",
+	"scripts": {
+		"prepack": "pnpm build:helpers && nuxt-module-build build",
+		"build:helpers": "rolldown -c",
+		"dev": "npm run dev:prepare && nuxi dev playground",
+		"dev:build": "nuxi build playground",
+		"dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+		"release": "pnpm run prepack && pnpm run docs:build && pnpm run test && changelogen --release && npm publish && git push --follow-tags",
+		"test": "vitest run",
+		"test:watch": "vitest watch",
+		"test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
+		"docs:dev": "vitepress dev docs",
+		"docs:build": "vitepress build docs",
+		"docs:preview": "vitepress preview docs"
+	}
+}

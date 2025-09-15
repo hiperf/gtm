@@ -1,0 +1,13 @@
+{
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "nuxi dev",
+		"build": "nuxi build",
+		"generate": "nuxi generate"
+	},
+	"dependencies": {
+		"@hiperf/gtm": "link:..",
+		"nuxt": "^4.1.1"
+	}
+}
