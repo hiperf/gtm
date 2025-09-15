@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as t,ae as n}from"./chunks/framework.Ix7xt_S9.js";const o=JSON.parse('{"title":"$gtm","description":"","frontmatter":{},"headers":[],"relativePath":"nuxt/gtm.md","filePath":"nuxt/gtm.md"}'),e={name:"nuxt/gtm.md"};function l(p,s,h,k,E,d){return t(),a("div",null,[...s[0]||(s[0]=[n("",4)])])}const g=i(e,[["render",l]]);export{o as __pageData,g as default};
