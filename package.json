@@ -1,6 +1,6 @@
 {
 	"name": "@hiperf/gtm",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Simple, Ultra lightweight, GDPR friendly, Google Tag Manager (GTM) module for your Nuxt application.",
 	"repository": {
 		"type": "git",
