@@ -49,8 +49,6 @@ export default defineNuxtPlugin((nuxtApp) => {
 			 * });
 			 */
 			gtm() {
-				console.log('gtm call', arguments);
-				
 				window.dataLayer.push(...arguments);
 			}
 		}
